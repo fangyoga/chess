@@ -1,0 +1,261 @@
+﻿/*basic.css*/
+*{
+	padding: 0;
+	margin: 0;
+	outline: none;
+}
+html,body{
+	height: 100%;
+	width: 100%;
+}
+button{
+	cursor: pointer;
+}
+/*main.css*/
+#wrap{
+	position: relative;
+	left: 50%;
+	top: 50%;
+	width: 620px;
+	height: 620px;
+	margin-left: -310px;
+	margin-top: -310px;
+}
+canvas{
+	border: 10px outset #c60;
+	background-color: #c90;
+}
+/*占位棋子*/
+#chessboard{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	height: 600px;
+	width: 600px;
+	background-color: rgba(0,0,0,.1);
+	z-index: 10;
+}
+.chessPosition{
+	/*color: #aaa;*/
+	color: transparent;
+	position: absolute;
+	cursor: pointer;
+	height: 56px;
+	width: 56px;
+	text-align: center;
+	font: 700 40px/56px "宋体";
+	border-radius: 50%;
+	background-color: transparent;
+}
+.chessPosition:active{
+	color: rgb(200,200,200);
+}
+/*棋子*/
+.chessPiece{
+	/*display: none;*/
+	cursor: pointer;
+	position: absolute;
+	height: 56px;
+	width: 56px;
+	text-align: center;
+	font: 900 36px/46px "隶书";
+	box-sizing: border-box;
+	border-radius: 50%;
+	background-color: #c90;
+}
+.red{
+	color: #d00;
+	border: 6px outset #c60;
+}
+.black{
+	color: #000;
+	border: 6px inset #c60;
+	transform: rotate(180deg);
+}
+.redPosHover{
+	background-color: rgba(255,0,0,.3);
+}
+.blackPosHover{
+	background-color: rgba(0,0,0,.3);
+}
+.redChessHover{
+	border: 6px outset #c70;
+	background-color: #c70;
+}
+.blackChessHover{
+	border: 6px inset #660;
+	background-color: #660;
+}
+.redClickChess{
+	box-shadow: 0 0 10px 2px #d00;
+}
+.blackClickChess{
+	box-shadow: 0 0 10px 2px #000;
+}
+/*弹窗*/
+#alert-cover{
+	display: none;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	height: 600px;
+	width: 600px;
+	background-color: rgba(0,0,0,.5);
+	z-index: 100;
+}
+#window-hint{
+	color: darkred;
+	position: absolute;
+	top: 140px;
+	left: 50%;
+	height: 140px;
+	width: 400px;
+	margin-left: -210px;
+	letter-spacing: 10px;
+	text-align: center;
+	font: 900 100px/140px "隶书";
+	border: 10px solid darkorange;
+	border-radius: 20px;
+	background-color: orange;
+}
+#window-btn{
+	color: #f00;
+	cursor: pointer;
+	position: absolute;
+	font: 900 24px "微软雅黑";
+	height: 50px;
+	width: 150px;
+	border-radius: 10px;
+	border: 5px outset darkorange;
+	background-color: orange;
+	top: 350px;
+	left: 50%;
+	margin-left: -80px;
+}
+#window-btn:hover{
+	color: darkred;
+}
+#window-btn:active{
+	border: 5px inset darkorange;
+}
+/*左侧显示区*/
+#left-box,#right-box{
+	position: absolute;
+	top: 0;
+	height: 620px;
+	width: 240px;
+	padding: 0 15px;
+	background-color: #fc3;
+}
+#left-box{
+	left: -300px;
+}
+#right-box{
+	right: -300px;
+}
+#game-name{
+	margin-top: 90px;
+	font: 900 52px/90px "华文行楷";
+	height: 90px;
+	padding: 5px;
+	text-align: center;
+	background-color: darkorange;
+}
+[id$="-think"]{
+	position: absolute;
+	left: 15px;
+	height: 50px;
+	width: 230px;
+	text-align: center;
+	font: 900 26px/50px "隶书";
+	border: 5px solid darkorange;
+	border-radius: 12px;
+	background-color: orange;
+}
+#red-think{
+	display: none;
+	color: #e00;
+	top: 20px;
+}
+#black-think{
+	display: none;
+	bottom: 20px;
+}
+#main-btns [id$="-btn"],#minor-btns [id$="-btn"]{
+	color: #c00;
+	position: absolute;
+	font: 900 30px/60px "隶书";
+	left: 50px;
+	width: 170px;
+	height: 60px;
+	border-radius: 10px;
+	border: 3px outset orange;
+	background-color: orange;
+}
+#main-btns [id$="-btn"]:hover,#minor-btns [id$="-btn"]:hover{
+	background-color: darkorange;
+	border: outset darkorange;
+}
+#main-btns [id$="-btn"]:active,#minor-btns [id$="-btn"]:active{
+	border: 3px inset darkorange;
+	background-color: darkorange;
+}
+#start-btn{
+	top: 220px;
+}
+#pause-btn{
+	top: 290px;
+}
+#restart-btn{
+	top: 360px;
+}
+#surrender-btn{
+	top: 430px;
+}
+#time-count{
+	position: absolute;
+	left: 15px;
+	top: 120px;
+	text-align: center;
+	height: 150px;
+	width: 230px;
+	font: 900 40px "隶书";
+	border: 5px solid darkorange;
+	border-radius: 12px;
+	background-color: orange;
+}
+#time-count p{
+	padding: 15px 0;
+}
+#time-count #time{
+	display: inline-block;
+	height: 50px;
+	line-height: 50px;
+	width: 150px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	background-color: #fff;
+}
+#game-rule{
+	position: absolute;
+	top: 300px;
+	left: 15px;
+	width: 240px;
+	padding: 5px 0;
+	border-radius: 12px;
+	background-color: rgba(200,200,200,.5);
+}
+#game-rule b{
+	color: #666;
+	font-size: 18px;
+	display: block;
+	padding: 5px 10px;
+}
+#game-rule p{
+	color: #666;
+	line-height: 24px;
+	font-size: 14px;
+	padding: 0 10px 10px 10px;
+	height: 70px;
+	text-indent: 2em;
+}

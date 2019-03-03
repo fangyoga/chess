@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>中国象棋（最新）</title>
+		<link rel="stylesheet" href="index.css" />
+	</head>
+	<body>
+		<div id="wrap">
+			<canvas width="600" height="600">老铁更新一下浏览器好吗?</canvas>
+			<div id="chessboard"></div>
+			<div id="alert-cover">
+				<p id="window-hint"></p>
+				<button id="window-btn"></button>
+			</div>
+			<div id="left-box">
+				<div id="main-btns">
+					<div id="game-name">中国象棋</div>
+					<button id="start-btn">开始游戏</button>
+					<button id="pause-btn"><span>暂停</span>游戏</button>
+					<button id="restart-btn">重新开始</button>
+					<button id="surrender-btn">发起投降</button>
+				</div>
+			</div>
+			<div id="right-box">
+				<div id="red-think">红方正在思考中…</div>
+				<div id="time-count">
+					<p>开局时间</p>
+					<div id="time">00:00</div>
+				</div>
+				<div id="game-rule">
+					<b>游戏说明：</b>
+					<p>红方先手。将对方的主将吃掉，游戏胜利</p>
+				</div>
+				<div id="black-think">黑方正在思考中…</div>
+			</div>
+		</div>
+		<script src="index.js"></script>
+	</body>
+</html>
